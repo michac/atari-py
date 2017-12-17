@@ -9,9 +9,22 @@ import numpy as np
 from numpy.ctypeslib import as_ctypes
 import os
 import six
+import inspect
+import sys
 
-ale_lib = cdll.LoadLibrary(os.path.join(os.path.dirname(__file__),
+# check which operating system we are in
+if sys.platform.startswith('linux2'):
+    ale_lib = cdll.LoadLibrary(os.path.join(os.path.dirname(__file__),
                                         'ale_interface/build/libale_c.so'))
+elif sys.platform.startswith('win32'):
+    # we have to change dir to import the dlls Arcade.Learning.Environment.Python needs
+    cwd = os.getcwd()
+    os.chdir(os.path.dirname(__file__) + "/ale_interface/build")  # script directory
+    ale_lib = cdll.LoadLibrary('Arcade.Learning.Environment.Python.dll')
+    os.chdir(cwd)
+else:
+    raise NotImplementedError('learningALE is not supported for your system. Got {0}, expected: linux2 or win32'
+                              .format(sys.platform))
 
 ale_lib.ALE_new.argtypes = None
 ale_lib.ALE_new.restype = c_void_p

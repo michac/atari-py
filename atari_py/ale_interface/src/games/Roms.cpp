@@ -78,6 +78,9 @@
 #include "supported/YarsRevenge.hpp"
 #include "supported/Zaxxon.hpp"
 
+#if (defined(WIN32) || defined(__MINGW32__))
+#include <algorithm>
+#endif
 
 /* list of supported games */
 static const RomSettings *roms[]  = {

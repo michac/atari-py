@@ -12,7 +12,11 @@
 #include "FishingDerby.hpp"
 
 #include "../RomUtils.hpp"
-using namespace std;
+using namespace std; 
+
+#if (defined(WIN32) || defined(__MINGW32__))
+#include <algorithm>
+#endif
 
 
 FishingDerbySettings::FishingDerbySettings() {
