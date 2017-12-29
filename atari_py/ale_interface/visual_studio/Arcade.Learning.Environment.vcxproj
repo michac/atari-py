@@ -34,6 +34,7 @@
     <ClCompile Include="..\src\common\SoundNull.cxx" />
     <ClCompile Include="..\src\common\SoundSDL.cxx" />
     <ClCompile Include="..\src\controllers\ale_controller.cpp" />
+    <ClCompile Include="..\src\controllers\fifo_controller.cpp" />
     <ClCompile Include="..\src\controllers\rlglue_controller.cpp" />
     <ClCompile Include="..\src\emucore\AtariVox.cxx" />
     <ClCompile Include="..\src\emucore\Booster.cxx" />
@@ -188,6 +189,7 @@
     <ClInclude Include="..\src\common\Version.hxx" />
     <ClInclude Include="..\src\common\VideoModeList.hxx" />
     <ClInclude Include="..\src\controllers\ale_controller.hpp" />
+    <ClInclude Include="..\src\controllers\fifo_controller.hpp" />
     <ClInclude Include="..\src\controllers\rlglue_controller.hpp" />
     <ClInclude Include="..\src\dependencies\include\begin_code.h" />
     <ClInclude Include="..\src\dependencies\include\close_code.h" />
